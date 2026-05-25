@@ -38,12 +38,19 @@ tqdm>=4.65.0
 
 ## Usage
 
-### training
+### Training
 ```bash
 # train new binary model
 python train_binary.py
 ```
-
+```bash
+# train new spot model on detached binaries
+python train_binary.py
+```
+```bash
+# train new binary model
+python train_binary.py
+```
 ## Input data format
 
 ### Light curve files
