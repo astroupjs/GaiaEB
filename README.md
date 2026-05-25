@@ -45,12 +45,14 @@ python train_binary.py
 ```
 ```bash
 # train new spot model on detached binaries
-python train_binary.py
+python train_detached.py
 ```
 ```bash
-# train new binary model
-python train_binary.py
+# train new spot model on overcontact binaries
+python train_overcontact.py
 ```
+Note: These scripts require the files selected_data.csv, selected_data_det.csv, and selected+data_over.csv, which can be created from synthetic light curves. 
+
 ## Input data format
 
 ### Light curve files
