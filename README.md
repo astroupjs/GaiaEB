@@ -1,5 +1,7 @@
-Synthetic light curves of detached and overcontact binaries are available at 
-https://doi.org/10.5281/zenodo.20308051
+
+## Datasets and model downloads:
+
+Synthetic light curves of detached and overcontact binaries are available at https://doi.org/10.5281/zenodo.20308051
 
 From them, the files selected_data.csv, selected_data_det.csv, and selected_data_over.csv can be very simply created for use in training scripts.
 
@@ -34,6 +36,13 @@ tqdm>=4.65.0
 
 > **GPU support:** If you have a CUDA-capable GPU, install the matching PyTorch build from [pytorch.org](https://pytorch.org/get-started/locally/) before running `pip install -r requirements.txt`. The script auto-detects the available device.
 
+## Usage
+
+### training
+```bash
+# train new binary model
+python train_binary.py
+```
 
 ## Input data format
 
