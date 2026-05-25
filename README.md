@@ -5,8 +5,34 @@ From them, the files selected_data.csv, selected_data_det.csv, and selected_data
 
 Trained models are available at https://doi.org/10.5281/zenodo.20376568
 
-## Installation
+## How to use it
 
+### Create and activate a virtual environment
+```bash
+python -m venv venv
+source venv/bin/activate        # Linux / macOS
+# venv\Scripts\activate         # Windows
+```
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+`requirements.txt`:
+
+```
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.10.0
+PyWavelets>=1.4.0
+tqdm>=4.65.0
+```
+
+> **GPU support:** If you have a CUDA-capable GPU, install the matching PyTorch build from [pytorch.org](https://pytorch.org/get-started/locally/) before running `pip install -r requirements.txt`. The script auto-detects the available device.
 
 
 ## Input data format
@@ -47,33 +73,6 @@ star_id,period,teff,binary_type
 
 ```
 
-### 2. Create and activate a virtual environment
-
-```bash
-python -m venv venv
-source venv/bin/activate        # Linux / macOS
-# venv\Scripts\activate         # Windows
-```
-
-### 3. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-`requirements.txt`:
-
-```
-torch>=2.0.0
-torchvision>=0.15.0
-numpy>=1.24.0
-pandas>=2.0.0
-scipy>=1.10.0
-PyWavelets>=1.4.0
-tqdm>=4.65.0
-```
-
-> **GPU support:** If you have a CUDA-capable GPU, install the matching PyTorch build from [pytorch.org](https://pytorch.org/get-started/locally/) before running `pip install -r requirements.txt`. The script auto-detects the available device.
 
 ---
 
@@ -154,19 +153,3 @@ classified_by_type/
 | Ch 2 | Adaptive stretch | 1st–99th percentile contrast normalisation; preserves low-amplitude modulation |
 
 ---
-
-## Additional settings
-
-| Variable | Default | Description |
-|---|---|---|
-| `IMAGE_SIZE` | `128` | CNN input image side length (pixels) |
-| `BATCH_SIZE` | `256` | Stars processed per GPU/CPU batch |
-| `N_STARS` | `100_000_000` | Cap on total stars processed (set lower for testing) |
-| `OUT_DIR` | `classified_by_type` | Output directory |
-
----
-
-## Author
-
-Stefan Parimucha  
-Pavol Jozef Šafárik University in Košice
