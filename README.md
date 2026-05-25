@@ -68,7 +68,7 @@ phase,flux
 
 The filename without extension is used as the **star identifier** (e.g. `3128456789.csv` → `star_id = 3128456789`). Phase values must be in `[0, 1)`, and flux has to be normalised to a maximum. The column names are configurable via `PHASE_COL` and `FLUX_COL`.
 
-### Metadata file (optional)
+#### Metadata file (optional)
 
 A single CSV with one row per star. Missing values are stored as `NaN` in the output.
 
@@ -86,8 +86,6 @@ star_id,period,teff,binary_type
 | `binary_type` | `detached` or `overcontact` | spot mode (if no prior binary run) |
 
 ---
-
-## Usage
 
 ### Step 1 – Configure `classify_binary.py`
 
@@ -142,25 +140,5 @@ classified_by_type/
 ```
 
 > If you want to run spot detection without a prior binary run, add a `binary_type` column (`detached` or `overcontact`) to your metadata CSV.
-
----
-
-## Channel encoding
-
-### Binary mode — per raw phase/flux curve
-
-| Channel | Name | Description |
-|---|---|---|
-| Ch 0 (R) | Polar projection | Phase → polar angle, normalised flux → radius |
-| Ch 1 (G) | Cartesian scatter | Phase vs. normalised flux |
-| Ch 2 (B) | Curvature map | Absolute second derivative, highlights eclipse transitions |
-
-### Spot mode — 100-point resampled flux array
-
-| Channel | Name | Description |
-|---|---|---|
-| Ch 0 | Gradient map | First derivative of flux; reveals asymmetric slopes from spots |
-| Ch 1 | Wavelet detail | db1 level-1 detail coefficients; sensitive to localised flux variations |
-| Ch 2 | Adaptive stretch | 1st–99th percentile contrast normalisation; preserves low-amplitude modulation |
 
 ---
