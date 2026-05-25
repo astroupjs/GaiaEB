@@ -53,9 +53,9 @@ python train_overcontact.py
 ```
 Note: These scripts require the files selected_data.csv, selected_data_det.csv, and selected+data_over.csv, which can be created from synthetic light curves. 
 
-## Input data format
+### Classification
 
-### Light curve files
+#### Light curve files
 
 Place one CSV file per star in a directory (configured as `LC_DIR`). Each file must contain at least two columns:
 
@@ -66,7 +66,7 @@ phase,flux
 ...
 ```
 
-The filename without extension is used as the **star identifier** (e.g. `3128456789.csv` → `star_id = 3128456789`). Phase values must be in `[0, 1)`. The column names are configurable via `PHASE_COL` and `FLUX_COL`.
+The filename without extension is used as the **star identifier** (e.g. `3128456789.csv` → `star_id = 3128456789`). Phase values must be in `[0, 1)`, and flux has to be normalised to a maximum. The column names are configurable via `PHASE_COL` and `FLUX_COL`.
 
 ### Metadata file (optional)
 
@@ -84,13 +84,6 @@ star_id,period,teff,binary_type
 | `period` | Orbital period [days] | output only |
 | `teff` | Effective temperature [K] | output only |
 | `binary_type` | `detached` or `overcontact` | spot mode (if no prior binary run) |
-
----
-
-
-
-```
-
 
 ---
 
