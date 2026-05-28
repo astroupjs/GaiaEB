@@ -233,10 +233,9 @@ def preprocess_binary(
     phases, fluxes = phases[sort_idx], fluxes[sort_idx]
 
     f_min, f_max = fluxes.min(), fluxes.max()
-    denom = f_max - f_min
-    f_normed = np.zeros_like(fluxes) if denom == 0 else (fluxes - f_min) / (denom + 1e-9)
+    f_normed = fluxes / f_max
     f_normed = np.clip(f_normed, 0.0, 1.0)
-
+   
     p_idx = (phases * (size - 1)).astype(int)
     f_idx = (f_normed * (size - 1)).astype(int)
 
