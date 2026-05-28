@@ -178,7 +178,7 @@ class AdvancedLCDataset(Dataset):
 
         # Min–max normalisation to [0, 1].
         f_min, f_max = fluxes.min(), fluxes.max()
-        f_normed = (fluxes - f_min) / (f_max - f_min + 1e-9)
+        f_normed = fluxes / f_max
         f_normed = np.clip(f_normed, 0.0, 1.0)
 
         # --- Channel 1 (Green): Cartesian scatter plot -------------------
