@@ -3,9 +3,11 @@
 
 Synthetic light curves of detached and overcontact binaries are available at https://doi.org/10.5281/zenodo.20308051
 
-From them, the files selected_data.csv, selected_data_det.csv, and selected_data_over.csv can be very simply created for use in training scripts.
+From them, you can easily create the files selected_data.csv, selected_data_det.csv, and selected_data_over.csv for use in training scripts.
 
 Trained models are available at https://doi.org/10.5281/zenodo.20376568
+
+Our classification is available at 
 
 ## How to use it
 
@@ -143,5 +145,7 @@ classified_by_type/
 
 ## Acknowledgement
 
-This research was supported by EU NextGenerationEU through the Recovery and Resilience Plan for Slovakia under project No. 09I03-03-V04-00262.
+
+This research was supported by EU NextGenerationEU through the Recovery and Resilience Plan for Slovakia under project No. 09I03-03-V04-00262. 
+
 ---
