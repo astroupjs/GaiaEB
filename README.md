@@ -141,4 +141,7 @@ classified_by_type/
 
 > If you want to run spot detection without a prior binary run, add a `binary_type` column (`detached` or `overcontact`) to your metadata CSV.
 
+## Acknowledgement
+
+This research was supported by EU NextGenerationEU through the Recovery and Resilience Plan for Slovakia under project No. 09I03-03-V04-00262.
 ---
